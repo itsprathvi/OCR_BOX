@@ -64,6 +64,7 @@ pywinpty==0.5.7
 pyzmq==19.0.1
 qtconsole==4.7.5
 QtPy==1.9.0
+gunicorn==19.9.0
 requests==2.23.0
 rfc3986==1.4.0
 Send2Trash==1.5.0
