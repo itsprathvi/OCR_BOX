@@ -41,7 +41,6 @@ matplotlib==3.2.2
 mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
-notebook==6.0.3
 numpy==1.19.0
 packaging==20.4
 pandas==1.0.5
@@ -59,14 +58,12 @@ pytesseract==0.3.4
 python-dateutil==2.8.1
 pyttsx3==2.88
 pytz==2020.1
-pywin32==228
 pywinpty==0.5.7
 pyzmq==19.0.1
 qtconsole==4.7.5
 QtPy==1.9.0
 gunicorn==19.9.0
 requests==2.23.0
-rfc3986==1.4.0
 Send2Trash==1.5.0
 six==1.15.0
 sniffio==1.1.0
