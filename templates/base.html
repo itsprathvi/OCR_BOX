@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/beauty8.css')}}" rel="stylesheet">
+
+    <title>{% block title %}Home page{% endblock %}</title>
+</head>
+  <!-- Navigation -->
+  <header>
+
+    <style>
+     .navbar .navbar-brand img {
+      height: 20px;
+    }
+
+    .navbar .navbar-brand {
+      padding-top: 0;
+    }
+
+    .navbar .nav-link {
+      color: #444343!important;
+    }
+
+    .navbar .button-collapse {
+      padding-top: 1px;
+    }
+
+    .card-intro .card-body {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 0 !important;
+    }
+
+    .card-intro .card-body h1 {
+      margin-bottom: 0;
+    }
+
+    .card-intro {
+      margin-top: 64px;
+    }
+
+    @media (max-width: 450px) {
+      .card-intro {
+        margin-top: 56px;
+      }
+    }
+
+    @media (min-width: 1441px) {
+      .card-intro {
+        padding-left: 0 !important;
+      }
+    }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="#"><strong>SOPHISTS </strong><i class="fas fa-award"></i></a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#" target="_blank"><strong>Home</strong></a>
+            </li>
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="http://vishwakonkani.org/"
+                class="nav-link border border-light rounded waves-effect mr-2" target="_blank">
+                  <strong>WKC <i class="fas fa-home mr-1"></i></strong>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="http://sophists-bot2.herokuapp.com/"
+                class="nav-link border border-light rounded waves-effect mr-2" target="_blank">
+                <strong>Sophists <i class="fas fa-feather-alt mr-1"></i>Official</strong>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Intro -->
+    <div class="card card-intro blue-gradient">
+
+      <div class="card-body white-text rgba-black-light text-center">
+
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+
+          <!--Grid column-->
+          <div class="col-md-6">
+
+            <p class="h4 mb-2">
+              OCR CONVERTER
+            </p>
+
+              <p class="mb-0">Optical Character Recognition Website</p>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+
+    </div>
+    <!-- Intro -->
+
+  </header>
+  <!-- Navigation -->
+
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</html>
