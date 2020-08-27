@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,url_for
 import pytesseract
 from PIL import Image
 import os
@@ -18,10 +18,16 @@ def upload_image():
         if request.files:
 
             image = request.files["image"]
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"],image.filename))
+            # i = Image.open(image.filename)
+            # picture_name = image.filename
+            # picture_path = os.path.join(app.root_path, 'static/img/uploads', picture_name)
+            # i.save(picture_path)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
             print("Image saved")
             print(image.filename)
+
             image_url = r"D:\Flask\static\img\uploads\\" + image.filename
+            image_url =  os.path.join(app.root_path, 'static/img/uploads', image.filename)
             image = Image.open(image_url)
             imageText = pytesseract.image_to_string(image, lang='kan')
 
