@@ -17,6 +17,8 @@ def upload_image():
 
         if request.files:
 
+            language = request.form['select']
+            print(language)
             image = request.files["image"]
             # i = Image.open(image.filename)
             # picture_name = image.filename
@@ -26,7 +28,7 @@ def upload_image():
             print("Image saved")
             print(image.filename)
 
-            image_url = r"D:\Flask\static\img\uploads\\" + image.filename
+            # image_url = r"D:\Flask\static\img\uploads\\" + image.filename
             image_url =  os.path.join(app.root_path, 'static/img/uploads', image.filename)
             image = Image.open(image_url)
             imageText = pytesseract.image_to_string(image, lang='kan')
