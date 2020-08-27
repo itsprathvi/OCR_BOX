@@ -24,7 +24,7 @@ def upload_image():
             # picture_name = image.filename
             # picture_path = os.path.join(app.root_path, 'static/img/uploads', picture_name)
             # i.save(picture_path)
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            image.save(os.path.join(app.root_path, 'static/img/uploads', image.filename))
             print("Image saved")
             print(image.filename)
 
