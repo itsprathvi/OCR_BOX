@@ -5,7 +5,7 @@ import os
 from gtts import gTTS
 
 
-pytesseract.pytesseract.tesseract_cmd = r"D:\tes\TesseractOCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Users\User\Flask\TesseractOCR\tesseract.exe"
 
 app = Flask(__name__)
 
@@ -16,8 +16,7 @@ def upload_image():
     if request.method =="POST":
 
         if request.files:
-
-            language = request.form['select']
+            language=request.form['select']
             print(language)
             image = request.files["image"]
             # i = Image.open(image.filename)
@@ -25,7 +24,7 @@ def upload_image():
             # picture_path = os.path.join(app.root_path, 'static/img/uploads', picture_name)
             # i.save(picture_path)
             image.save(os.path.join(app.root_path, 'static/img/uploads', image.filename))
-            print("Image saved")
+            print("IMAGE SAVED")
             print(image.filename)
 
             # image_url = r"D:\Flask\static\img\uploads\\" + image.filename
