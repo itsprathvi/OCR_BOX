@@ -38,7 +38,7 @@ def upload_image():
             print(image.filename)
 
             # image_url = r"D:\Flask\static\img\uploads\\" + image.filename
-            image_url =  os.path.join(app.root_path, 'static/img/uploads', image.filename)
+            image_url = os.path.join(app.root_path, 'static/img/uploads', image.filename)
             image = Image.open(image_url)
             imageText = pytesseract.image_to_string(image, lang=language)
 
