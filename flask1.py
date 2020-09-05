@@ -3,9 +3,10 @@ import pytesseract
 from PIL import Image
 import os
 from gtts import gTTS
+from googletrans import Translator
 
-
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\User\Flask\TesseractOCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = url_for('static', filename='TesseractOCR/tesseract.exe')
+#pytesseract.pytesseract.tesseract_cmd = r"C:\Users\User\Flask\TesseractOCR\tesseract.exe"
 
 app = Flask(__name__)
 
@@ -42,6 +43,10 @@ def upload_image():
             image = Image.open(image_url)
             imageText = pytesseract.image_to_string(image, lang=language)
 
+
+            translator = Translator()
+            translatedText = translator.translate(imageText).text
+
         print("Audio playing...")
 
         if l == "Kannada":
@@ -56,7 +61,9 @@ def upload_image():
         myObj = gTTS(text=imageText, lang=language ,slow=False)
         myObj.save("static/audio/sophistsOCR.mp3")
         data = imageText
-        return render_template("upload_image.html", data=data)
+        key = translatedText
+
+        return render_template("upload_image.html", data=data, key=key)
 
     else:
         return render_template("upload_image.html")

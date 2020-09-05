@@ -10,6 +10,7 @@
 </div>
 
 
+
 <div class="container">
   <div class="card">
     <div class="card-body">
@@ -18,9 +19,32 @@
         <p class="lead" id="content">{{data}}</p>
     </div>
   </div>
-          <div class="card-action">
-            <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-          </div>
+        <div class="card-action">
+          <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+        </div>
+
+
+
+
+
+
+  <div class="card">
+    <div class="card-body">
+       <h6><strong>TRANSLATED TEXT <i class="fas fa-book-reader"></i></strong></h6>
+        <p  class="lead" id="read">{{key}}</p>
+    </div>
+  </div>
+        <div class="card-action">
+          <button class="btn btn-success" data-clipboard-target="#read"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+        </div>
+
+
+  <script>
+    function click() {
+      var button = document.getElementById("demo").innerHTML ;
+      };
+  </script>
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -35,6 +59,8 @@
       });
   </script>
 </div>
+
+
 
 <div class="container">
   <div class="card">
@@ -69,6 +95,7 @@
           <div class="form-group">
             <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
             <select class="form-control" id="exampleFormControlSelect1" name="select" >
+              <option>--Select--</option>
               <option value="Kannada">Kannada</option>
               <option value="English">English</option>
               <option value="Hindi">Hindi</option>
