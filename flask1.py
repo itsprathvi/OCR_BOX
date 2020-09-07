@@ -5,7 +5,7 @@ import os
 from gtts import gTTS
 from googletrans import Translator
 
-pytesseract.pytesseract.tesseract_cmd = r"TesseractOCR/tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = "./TesseractOCR/tesseract.exe"
 
 app = Flask(__name__)
 
