@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Font Awesome -->
@@ -15,9 +13,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <link href="{{url_for('static', filename='css/beauty.css')}}" rel="stylesheet">
-
-
-    <title>{% block title %}Home page{% endblock %}</title>
+    <title>{% block title %}Home {% endblock %}</title>
 </head>
   <!-- Navigation -->
   <header>
@@ -71,7 +67,7 @@
       <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="#"><strong>SOPHISTS</strong></a>
+        <a class="navbar-brand waves-effect" href="#"><h4><strong>SUSHIKSHA</strong></h4></a>
         <!-- Collapse -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +80,7 @@
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="#" target="_blank"><strong>Home</strong></a>
+              <a class="nav-link waves-effect" href="#" target="_blank"><h6><strong>Home</strong></h6></a>
             </li>
           </ul>
 
@@ -123,7 +119,7 @@
           <div class="col-md-6">
 
             <p class="h4 mb-2">
-              OCR CONVERTER
+              OCR BOX
             </p>
 
               <p class="mb-0">Optical Character Recognition Website</p>
@@ -141,10 +137,6 @@
 
   </header>
   <!-- Navigation -->
-
-
-
-
     {% block content %}
 
     {% endblock %}

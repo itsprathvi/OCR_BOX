@@ -1,19 +1,22 @@
-from flask import Flask, render_template, request,url_for
+from flask import Flask, render_template, request, url_for
 import pytesseract
 from PIL import Image
 import os
 from gtts import gTTS
-from googletrans import Translator
+#from googletrans import Translator
+from google_trans_new import google_translator
 
 pytesseract.pytesseract.tesseract_cmd = "./TesseractOCR/tesseract.exe"
 
 app = Flask(__name__)
 
 app.config["IMAGE_UPLOADS"] = r"D:\Flask\static\img\uploads"
+
+
 @app.route("/home")
-@app.route("/",methods=["GET","POST"])
+@app.route("/", methods=["GET", "POST"])
 def upload_image():
-    if request.method =="POST":
+    if request.method == "POST":
 
         if request.files:
             l = request.form['select']
@@ -27,12 +30,7 @@ def upload_image():
             elif l == "Sanskrit":
                 language = 'san'
 
-
             image = request.files["image"]
-            # i = Image.open(image.filename)
-            # picture_name = image.filename
-            # picture_path = os.path.join(app.root_path, 'static/img/uploads', picture_name)
-            # i.save(picture_path)
             image.save(os.path.join(app.root_path, 'static/img/uploads', image.filename))
             print("IMAGE SAVED")
             print(image.filename)
@@ -41,11 +39,10 @@ def upload_image():
             image_url = os.path.join(app.root_path, 'static/img/uploads', image.filename)
             image = Image.open(image_url)
             imageText = pytesseract.image_to_string(image, lang=language)
-
-
-            translator = Translator()
-            translatedText = translator.translate(imageText).text
-
+            print()
+            translator = google_translator() 
+            translatedText = translator.translate(imageText)
+            print(translatedText)
         print("Audio Ready!")
 
         if l == "Kannada":
@@ -57,7 +54,7 @@ def upload_image():
         elif l == "Sanskrit":
             language = 'sk'
 
-        myObj = gTTS(text=imageText, lang=language ,slow=False)
+        myObj = gTTS(text=imageText, lang=language, slow=False)
         myObj.save("static/audio/sophistsOCR.mp3")
         data = imageText
         key = translatedText
@@ -67,5 +64,6 @@ def upload_image():
     else:
         return render_template("upload_image.html")
 
+
 if __name__ == "__main__":
-   app.run(debug=True)
+    app.run(debug=True)
