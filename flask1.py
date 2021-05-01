@@ -6,8 +6,6 @@ from gtts import gTTS
 #from googletrans import Translator
 from google_trans_new import google_translator
 
-pytesseract.pytesseract.tesseract_cmd = "./TesseractOCR/tesseract.exe"
-
 app = Flask(__name__)
 
 app.config["IMAGE_UPLOADS"] = r"D:\Flask\static\img\uploads"
