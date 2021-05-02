@@ -18,6 +18,7 @@ def getAudioUrl(filename):
 @app.route("/", methods=["GET", "POST"])
 def upload_image():
     filename = ""
+    translator = google_translator() 
     if request.method == "POST":
 
         if request.files:
@@ -41,7 +42,6 @@ def upload_image():
 
             try:
                 imageText = pytesseract.image_to_string(image, lang=language)
-                translator = google_translator() 
                 translatedText = translator.translate(imageText)
             except:
                 imageText ="No Text Found"
