@@ -43,6 +43,9 @@ def upload_image():
             try:
                 imageText = pytesseract.image_to_string(image, lang=language) 
                 translatedText = translator.translate(imageText)
+                if(!imageText or !translatedText):
+                    imageText ="No Text Found"
+                    translatedText = "No Text Found"
             except:
                 imageText ="No Text Found"
                 translatedText = "No Text Found"
