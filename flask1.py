@@ -3,7 +3,6 @@ import pytesseract
 from PIL import Image
 import os
 from gtts import gTTS
-#from googletrans import Translator
 from google_trans_new import google_translator
 
 app = Flask(__name__)
@@ -17,12 +16,15 @@ def getAudioUrl(filename):
 @app.route("/home")
 @app.route("/", methods=["GET", "POST"])
 def upload_image():
-    filename = ""
-    translator = google_translator() 
     if request.method == "POST":
-
+        filename = ""
+        translator = google_translator()
         if request.files:
+
             l = request.form['select']
+            image = request.files["image"]
+            filename = image.filename
+
             if l == "Kannada":
                 language = 'kan'
             elif l == "English":
@@ -32,61 +34,58 @@ def upload_image():
             elif l == "Sanskrit":
                 language = 'san'
 
-            image = request.files["image"]
-            filename = image.filename
-
             image.save(os.path.join(app.root_path, 'static/img/uploads', filename))
 
             image_url = os.path.join(app.root_path, 'static/img/uploads', filename)
             image = Image.open(image_url)
 
+            #extracting text from image
             try:
-                imageText = pytesseract.image_to_string(image, lang=language)
+                imageText = pytesseract.image_to_string(image, lang=language) 
                 translatedText = translator.translate(imageText)
             except:
                 imageText ="No Text Found"
                 translatedText = "No Text Found"
-        print("Text Ready!")
 
-        if l == "Kannada":
-            language = 'kn'
-        elif l == "English":
-            language = 'en'
-        elif l == "Hindi":
-            language = 'hi'
-        elif l == "Sanskrit":
-            language = 'sk'
+            if l == "Kannada":
+                language = 'kn'
+            elif l == "English":
+                language = 'en'
+            elif l == "Hindi":
+                language = 'hi'
+            elif l == "Sanskrit":
+                language = 'sk'
 
-        myObj = gTTS(text=imageText, lang=language, slow=False)
-        audioFile = getAudioUrl(filename)
-        myObj.save("static/audio/"+audioFile)
-        
-        if l == "Kannada":
-            language = 'kn'
-        elif l == "English":
-            language = 'eng'
-        elif l == "Hindi":
-            language = 'hi'
+            myObj = gTTS(text=imageText, lang=language, slow=False)
+            audioFile = getAudioUrl(filename)
+            myObj.save("static/audio/"+audioFile)
+            
+            if l == "Kannada":
+                language = 'kn'
+            elif l == "English":
+                language = 'eng'
+            elif l == "Hindi":
+                language = 'hi'
 
-        try:
-            kanText = translator.translate(imageText, lang_src=language, lang_tgt = 'kn')
-        except:
-            kanText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'kn')
+            try:
+                kanText = translator.translate(imageText, lang_src=language, lang_tgt = 'kn')
+            except:
+                kanText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'kn')
 
-        try:
-            hinText = translator.translate(imageText, lang_src=language, lang_tgt = 'hi')
-        except:
-            hinText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'hi')
+            try:
+                hinText = translator.translate(imageText, lang_src=language, lang_tgt = 'hi')
+            except:
+                hinText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'hi')
 
-        obj = {
-            "imgText" : imageText,
-            "engText" : translatedText,
-            "hinText" : hinText,
-            "kanText" : kanText,
-            "audioFile" : audioFile,
-        }
+            obj = {
+                "imgText" : imageText,
+                "engText" : translatedText,
+                "hinText" : hinText,
+                "kanText" : kanText,
+                "audioFile" : audioFile,
+            }
 
-        return render_template("upload_image.html", obj=obj)
+            return render_template("upload_image.html", obj=obj)
 
     else:
         return render_template("upload_image.html")
