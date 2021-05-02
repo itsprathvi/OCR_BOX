@@ -19,6 +19,7 @@ def upload_image():
     if request.method == "POST":
         filename = ""
         translator = google_translator()
+        language = ""
         if request.files:
 
             l = request.form['select']

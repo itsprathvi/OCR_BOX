@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    height: 100vh;
+    background: #edf7ff;
+}
+
+.text-load {
+    position: absolute;
+    bottom: 0px;
+    left: -100px;
+    font-family: 'Zen Dots', cursive;
+    color: #cfcece;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.loader-div {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #111111d5;
+    position: fixed;
+    top: 0;
+}
+
+.loader {
+    width: 80px;
+    height: 67px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(2, 2);
+}
+
+.loader .square {
+    background: #009dff;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 4px;
+    animation-fill-mode: both;
+    animation: motion 2.5s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+}
+
+.loader .path {
+    height: 10px;
+    width: 110px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.loader .path>div {
+    background: #cfcece;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin: 0 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-fill-mode: both;
+    animation: dynamic 5s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+}
+
+.loader .path>div:nth-child(1) {
+    left: 40px;
+}
+
+.loader .path>div:nth-child(2) {
+    left: 80px;
+}
+
+.loader .path>div:nth-child(3) {
+    left: 120px;
+}
+
+.loader .path>div:nth-child(4) {
+    left: 160px;
+}
+
+.loader .path>div:nth-child(5) {
+    left: 200px;
+}
+
+.loader .path>div:nth-child(6) {
+    left: 240px;
+}
+
+.loader .path>div:nth-child(7) {
+    left: 280px;
+}
+
+@keyframes motion {
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes dynamic {
+    0% {
+        transform: translateX(-40px);
+    }
+    25% {
+        transform: translateX(-80px);
+    }
+    50% {
+        transform: translateX(-120px);
+    }
+    75% {
+        transform: translateX(-160px);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}

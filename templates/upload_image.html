@@ -1,7 +1,9 @@
-{% extends "base.html" %} {% block title %} ImTxt {% endblock %} {% block content %} {% if obj %}
+{% extends "base.html" %} {% block title %} ImTxt {% endblock %} {% block content %}
+<script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
+<!-- <script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script> -->
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}">  -->
+{% if obj %}
 
-<!-- <script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script>
-<link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}"> -->
 
 <div class="container">
     <div class="card">
@@ -49,15 +51,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script>
-        var clipboard = new ClipboardJS(".btn");
-        clipboard.on('success', function() {
-            M.toast({
-                html: "copied successfully",
-                classes: "white"
-            });
-        });
-    </script>
 </div>
 
 
@@ -90,12 +83,12 @@
                     <h4><strong>Upload An Image</strong></h4>
                     <hr>
 
-                    <form action="/" method="POST" enctype="multipart/form-data">
+                    <form action="/" method="POST" enctype="multipart/form-data" id="img-form">
 
                         <div class="form-group">
                             <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
                             <select class="form-control" id="exampleFormControlSelect1" name="select" required>
-                              <option>--Select--</option>
+                              <option value="">--Select--</option>
                               <option value="Kannada">Kannada</option>
                               <option value="English">English</option>
                               <option value="Hindi">Hindi</option>
@@ -112,7 +105,7 @@
                         <div class="croper">
                             <img id="file-ip-1-preview" src="https://www.blueworx.com/wp-content/uploads/2019/09/placeholder-image-gray-16x9.png" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
                         </div>
-                        <button type="submit" id="give" class="btn blue-gradient waves-effect">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
+                        <button type="submit" id="give" class="btn blue-gradient waves-effect" onclick="loadingDisplay()">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
                     </form>
                 </div>
             </div>
@@ -121,68 +114,14 @@
 </div>
 
 
-{% endif %}
-<div class="container">
-    <h1> </h1>
-</div>
-<!--Section: Content-->
+<!--loading symbol-->
+<link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<div id="loader">
 
-<section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
-
-    <!--Grid row-->
-    <div class="row d-flex justify-content-center">
-
-        <!--Grid column-->
-        <h1> </h1>
-        <div class="col-lg-5 text-center">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-                <img src="{{url_for('static',filename = 'img/wkcc.png')}}" class="img-fluid">
-                <a href="">
-                    <div class="mask rgba-white-light"></div>
-                </a>
-            </div>
-
-        </div>
-        <!--Grid column-->
-
-    </div>
-    <!--Grid row-->
-
-
-</section>
-<!--Section: Content-->
-<div class="container">
-    <h1> </h1>
 </div>
 
-
-<!-- Footer -->
-<footer class="page-footer font-small text-center primary-color-dark pt-4">
-
-    <!-- Footer Elements -->
-    <div class="container">
-
-        <!-- Call to action -->
-        <ul class="list-unstyled list-inline text-center py-2">
-            <li class="list-inline-item">
-                <h5 class="mb-1"><strong>To know more about the OCR</strong></h5>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://en.wikipedia.org/wiki/Optical_character_recognition" class="btn btn-outline-white">CLICK HERE</a>
-            </li>
-        </ul>
-        <!-- Call to action -->
-
-    </div>
-
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://ocr-converter.herokuapp.com/"> OCRconverter.com</a>
-    </div>
-
-</footer>
-<!-- Footer -->
 
 <script>
     var imgName;
@@ -209,4 +148,4 @@
     );
 </script>
 
-{% endblock %}
+{%endif%} {% endblock %}
