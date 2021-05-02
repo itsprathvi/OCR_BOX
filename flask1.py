@@ -29,10 +29,8 @@ def upload_image():
                 language = 'kan'
             elif l == "English":
                 language = 'eng'
-            elif l == "Hindi":
+            elif l == "Hindi" or l == "Sanskrit":
                 language = 'hin'
-            elif l == "Sanskrit":
-                language = 'san'
 
             image.save(os.path.join(app.root_path, 'static/img/uploads', filename))
 
