@@ -67,6 +67,8 @@ def upload_image():
                 language = 'eng'
             elif l == "Hindi":
                 language = 'hi'
+            elif l == "Sanskrit":
+                language = 'snk'
 
             try:
                 kanText = translator.translate(imageText, lang_src=language, lang_tgt = 'kn')
