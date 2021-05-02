@@ -1,183 +1,200 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %} Text EXtractor {% endblock %} {% block content %} {% if obj %}
 
-{% block title %}Home page{% endblock %}
+<script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}">
 
-{% block content %}
-
-{% if data %}
 <div class="container">
-  <h1>     </h1>
+    <div class="card">
+        <div class="card-body">
+
+            <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="content">{{obj.imgText}}</p>
+        </div>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <h6><strong>TRANSLATED TEXT <i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="read">{{obj.engText}}</p>
+        </div>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" data-clipboard-target="#read"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+    </div>
+
+
+    <script>
+        function click() {
+            var button = document.getElementById("demo").innerHTML;
+        };
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS(".btn");
+        clipboard.on('success', function() {
+            M.toast({
+                html: "copied successfully",
+                classes: "white"
+            });
+        });
+    </script>
 </div>
 
 
 
 <div class="container">
-  <div class="card">
-    <div class="card-body">
-
-      <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-        <p class="lead" id="content">{{data}}</p>
-    </div>
-  </div>
-        <div class="card-action">
-          <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-        </div>
-
-
-  <div class="card">
-    <div class="card-body">
-       <h6><strong>TRANSLATED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-        <p  class="lead" id="read">{{key}}</p>
-    </div>
-  </div>
-        <div class="card-action">
-          <button class="btn btn-success" data-clipboard-target="#read"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-        </div>
-
-
-  <script>
-    function click() {
-      var button = document.getElementById("demo").innerHTML ;
-      };
-  </script>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-  <script>
-      var clipboard = new ClipboardJS(".btn");
-      clipboard.on('success',function(){
-          M.toast({
-            html:"copied successfully",
-            classes:"white"
-          });
-      });
-  </script>
-</div>
-
-
-
-<div class="container">
-  <div class="card">
-    <div class="card-body">
-  <h1>            </h1>
-  <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
-  <h1>            </h1>
-<audio controls>
-  <source src="{{url_for('static', filename='audio/sophistsOCR.mp3')}}" type="audio/mpeg">
+    <div class="card">
+        <div class="card-body">
+            <h1> </h1>
+            <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
+            <h1> </h1>
+            <audio controls>
+  <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
   Your browser does not support the audio tag.
 </audio>
+        </div>
     </div>
-  </div>
 </div>
 
 
 {% else %}
 <div class="container">
-  <h1>     </h1>
+    <h1> </h1>
 </div>
 <div class="container">
-<div class="card">
-  <div class="card-body">
-    <div class="row">
-      <div class="col">
-        <h1>          </h1>
-        <h4><strong>Upload An Image</strong></h4>
-        <hr>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h1> </h1>
+                    <h4><strong>Upload An Image</strong></h4>
+                    <hr>
 
-        <form action="/" method="POST" enctype="multipart/form-data">
+                    <form action="/" method="POST" enctype="multipart/form-data">
 
-          <div class="form-group">
-            <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
-            <select class="form-control" id="exampleFormControlSelect1" name="select" >
-              <option>--Select--</option>
-              <option value="Kannada">Kannada</option>
-              <option value="English">English</option>
-              <option value="Hindi">Hindi</option>
-              <option value="Sanskrit">Sanskrit</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <h6><strong>Drop a file below</strong></h6>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" name="image" id="image">
-              <label class="custom-file-label" for="image">Select image...</label>
+                        <div class="form-group">
+                            <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
+                            <select class="form-control" id="exampleFormControlSelect1" name="select" required>
+                              <option>--Select--</option>
+                              <option value="Kannada">Kannada</option>
+                              <option value="English">English</option>
+                              <option value="Hindi">Hindi</option>
+                              <option value="Sanskrit">Sanskrit</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <h6><strong>Drop a file below</strong></h6>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" onchange="showPreviewOne(event);" required>
+                                <label class="custom-file-label" for="image">Select image...</label>
+                            </div>
+                        </div>
+                        <div class="croper">
+                            <img id="file-ip-1-preview" src="https://www.blueworx.com/wp-content/uploads/2019/09/placeholder-image-gray-16x9.png" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
+                        </div>
+                        <button type="submit" id="give" class="btn blue-gradient waves-effect">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <button type="submit" id="give" class="btn blue-gradient waves-effect">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>
 
 
 {% endif %}
 <div class="container">
-  <h1>     </h1>
+    <h1> </h1>
 </div>
-    <!--Section: Content-->
+<!--Section: Content-->
 
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+<section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
-      <!--Grid row-->
-      <div class="row d-flex justify-content-center">
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center">
 
         <!--Grid column-->
         <h1> </h1>
         <div class="col-lg-5 text-center">
 
-          <!--Image-->
-          <div class="view overlay z-depth-1-half">
-            <img src="{{url_for('static',filename = 'img/wkcc.png')}}" class="img-fluid">
-            <a href="">
-              <div class="mask rgba-white-light"></div>
-            </a>
-          </div>
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+                <img src="{{url_for('static',filename = 'img/wkcc.png')}}" class="img-fluid">
+                <a href="">
+                    <div class="mask rgba-white-light"></div>
+                </a>
+            </div>
 
         </div>
         <!--Grid column-->
 
-      </div>
-      <!--Grid row-->
+    </div>
+    <!--Grid row-->
 
 
-    </section>
-    <!--Section: Content-->
+</section>
+<!--Section: Content-->
 <div class="container">
-  <h1>     </h1>
+    <h1> </h1>
 </div>
 
 
 <!-- Footer -->
 <footer class="page-footer font-small text-center primary-color-dark pt-4">
 
-  <!-- Footer Elements -->
-  <div class="container">
+    <!-- Footer Elements -->
+    <div class="container">
 
-    <!-- Call to action -->
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1"><strong>To know more about the OCR</strong></h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="https://en.wikipedia.org/wiki/Optical_character_recognition" class="btn btn-outline-white">CLICK HERE</a>
-      </li>
-    </ul>
-    <!-- Call to action -->
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <h5 class="mb-1"><strong>To know more about the OCR</strong></h5>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://en.wikipedia.org/wiki/Optical_character_recognition" class="btn btn-outline-white">CLICK HERE</a>
+            </li>
+        </ul>
+        <!-- Call to action -->
 
-  </div>
-  <!-- Footer Elements -->
+    </div>
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://ocr-converter.herokuapp.com/"> OCRconverter.com</a>
-  </div>
-  <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://ocr-converter.herokuapp.com/"> OCRconverter.com</a>
+    </div>
 
 </footer>
 <!-- Footer -->
+
+<script>
+    var imgName;
+
+    function showPreviewOne(event) {
+        if (event.target.files.length > 0) {
+            let src = URL.createObjectURL(event.target.files[0]);
+            imgName = src;
+            let preview = document.getElementById("file-ip-1-preview");
+            preview.src = src;
+            preview.style.display = "block";
+        } else {
+            myImgRemoveFunctionOne()
+        }
+    }
+
+    function myImgRemoveFunctionOne() {
+        document.getElementById("file-ip-1-preview").src = "https://www.blueworx.com/wp-content/uploads/2019/09/placeholder-image-gray-16x9.png";
+    }
+
+    const img_c = new ImageCropper(
+        ".cropper",
+        imgName
+    );
+</script>
 
 {% endblock %}
