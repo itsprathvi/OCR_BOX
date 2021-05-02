@@ -1,7 +1,7 @@
-{% extends "base.html" %} {% block title %} Text EXtractor {% endblock %} {% block content %} {% if obj %}
+{% extends "base.html" %} {% block title %} ImTxt {% endblock %} {% block content %} {% if obj %}
 
-<script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script>
-<link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}">
+<!-- <script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}"> -->
 
 <div class="container">
     <div class="card">
@@ -19,20 +19,32 @@
     <div class="card">
         <div class="card-body">
             <h6><strong>TRANSLATED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-            <p class="lead" id="read">{{obj.engText}}</p>
+            <p class="lead" id="engText">{{obj.engText}}</p>
         </div>
     </div>
     <div class="card-action">
-        <button class="btn btn-success" data-clipboard-target="#read"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+        <button class="btn btn-success" data-clipboard-target="#engText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
     </div>
 
+    <div class="card">
+        <div class="card-body">
+            <h6><strong>TRANSLATED TEXT IN KANNADA <i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="kanText">{{obj.kanText}}</p>
+        </div>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" data-clipboard-target="#kanText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+    </div>
 
-    <script>
-        function click() {
-            var button = document.getElementById("demo").innerHTML;
-        };
-    </script>
-
+    <div class="card">
+        <div class="card-body">
+            <h6><strong>TRANSLATED TEXT IN HINDI <i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="hinText">{{obj.hinText}}</p>
+        </div>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" data-clipboard-target="#hinText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -57,9 +69,9 @@
             <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
             <h1> </h1>
             <audio controls>
-  <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
-  Your browser does not support the audio tag.
-</audio>
+                <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
         </div>
     </div>
 </div>
