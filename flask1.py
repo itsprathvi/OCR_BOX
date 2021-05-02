@@ -6,7 +6,7 @@ from gtts import gTTS
 #from googletrans import Translator
 from google_trans_new import google_translator
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 app.config["IMAGE_UPLOADS"] = os.path.join(app.root_path, 'static/img/uploads')
 
@@ -92,5 +92,5 @@ def upload_image():
         return render_template("upload_image.html")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
