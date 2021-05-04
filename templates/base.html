@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="shortcut icon" type="image/png" href="static\img\icon4.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
@@ -13,115 +14,74 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <title>{% block title %}Home {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
 </head>
-  <!-- Navigation -->
-  <header>
+<!-- Navigation -->
 
-    <style>
-     .navbar .navbar-brand img {
-      height: 20px;
-    }
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container">
 
-    .navbar .navbar-brand {
-      padding-top: 0;
-    }
+                <!-- Brand -->
+                <a class="navbar-brand waves-effect" href="#">
+                    <h4><strong>SUSHIKSHA</strong></h4>
+                </a>
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-    .navbar .nav-link {
-      color: #444343!important;
-    }
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    .navbar .button-collapse {
-      padding-top: 1px;
-    }
+                    <!-- Left -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#" target="_blank">
+                                <h6><strong>Home</strong></h6>
+                            </a>
+                        </li>
+                    </ul>
 
-    .card-intro .card-body {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-radius: 0 !important;
-    }
+                </div>
 
-    .card-intro .card-body h1 {
-      margin-bottom: 0;
-    }
+            </div>
+        </nav>
+        <!-- Navbar -->
 
-    .card-intro {
-      margin-top: 64px;
-    }
+        <!-- Intro -->
+        <div class="card card-intro blue-gradient">
 
-    @media (max-width: 450px) {
-      .card-intro {
-        margin-top: 56px;
-      }
-    }
+            <div class="card-body white-text rgba-black-light text-center">
 
-    @media (min-width: 1441px) {
-      .card-intro {
-        padding-left: 0 !important;
-      }
-    }
-    </style>
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
 
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container">
+                    <!--Grid column-->
+                    <div class="col-md-6">
 
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="#"><h4><strong>SUSHIKSHA</strong></h4></a>
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                        <p class="h4 mb-2">
+                            OCR BOX
+                        </p>
 
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <p class="mb-0">Optical Character Recognition Website</p>
 
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="#" target="_blank"><h6><strong>Home</strong></h6></a>
-            </li>
-          </ul>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </div>
 
         </div>
+        <!-- Intro -->
+    </header>
 
-      </div>
-    </nav>
-    <!-- Navbar -->
-
-    <!-- Intro -->
-    <div class="card card-intro blue-gradient">
-
-      <div class="card-body white-text rgba-black-light text-center">
-
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-
-          <!--Grid column-->
-          <div class="col-md-6">
-
-            <p class="h4 mb-2">
-              OCR BOX
-            </p>
-
-              <p class="mb-0">Optical Character Recognition Website</p>
-
-          </div>
-          <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-      </div>
-
-    </div>
-    <!-- Intro -->
-
-  </header>
-  <!-- Navigation -->
-    {% block content %}
-
-    {% endblock %}
+    <!-- BLOCK CONTENT -->
+    {% block content %} {% endblock %}
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -130,4 +90,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+
 </html>

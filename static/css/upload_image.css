@@ -125,3 +125,10 @@ body {
         transform: translateX(-200px);
     }
 }
+
+
+/* Drop down */
+
+#tranContainer {
+    display: none;
+}

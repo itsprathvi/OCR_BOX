@@ -1,151 +1,115 @@
-{% extends "base.html" %} {% block title %} ImTxt {% endblock %} {% block content %}
-<script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
-<!-- <script src="{{url_for('static', filename='dist/imagecrop.min.js')}}"></script> -->
-<!-- <link rel="stylesheet" href="{{url_for('static', filename='dist/imagecrop.min.css')}}">  -->
-{% if obj %}
+{% extends "base.html" %}
 
 
-<div class="container">
-    <div class="card">
-        <div class="card-body">
+{% block title %} ImTxt {% endblock %} 
+ 
+ 
+{% block content %}
 
-            <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-            <p class="lead" id="content">{{obj.imgText}}</p>
+    {% if obj %}
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
+                        <p class="lead" id="content">{{obj.imgText}}</p>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+            </div>
+
+
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <h1> </h1>
+                        <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
+                        <h1> </h1>
+                        <audio controls>
+                            <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+            
+            <!--DROPDOWN-->
+        <div class="container">
+                <select id="languages" class="d-inline p-2 mb-2 bg-dark text-white">
+                </select>
+                <button class="d-inline btn btn-primary" onclick="translateNow()">Translate</button>
         </div>
-    </div>
-    <div class="card-action">
-        <button class="btn btn-success" data-clipboard-target="#content"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-    </div>
 
-
-    <div class="card">
-        <div class="card-body">
-            <h6><strong>TRANSLATED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-            <p class="lead" id="engText">{{obj.engText}}</p>
+        <div class="container" id="tranContainer">
+            <div class="card">
+                <div class="card-body">
+                    <h6><strong>TRANSLATED TEXT<i class="fas fa-book-reader"></i></strong></h6>
+                    <p class="lead" id="transText"></p>
+                </div>
+            </div>
+            <div class="card-action">
+                <button class="btn btn-success" data-clipboard-target="#transText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
+            </div>
         </div>
-    </div>
-    <div class="card-action">
-        <button class="btn btn-success" data-clipboard-target="#engText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-    </div>
 
-    <div class="card">
-        <div class="card-body">
-            <h6><strong>TRANSLATED TEXT IN KANNADA <i class="fas fa-book-reader"></i></strong></h6>
-            <p class="lead" id="kanText">{{obj.kanText}}</p>
-        </div>
-    </div>
-    <div class="card-action">
-        <button class="btn btn-success" data-clipboard-target="#kanText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <h6><strong>TRANSLATED TEXT IN HINDI <i class="fas fa-book-reader"></i></strong></h6>
-            <p class="lead" id="hinText">{{obj.hinText}}</p>
-        </div>
-    </div>
-    <div class="card-action">
-        <button class="btn btn-success" data-clipboard-target="#hinText"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-    </div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-</div>
-
-
-
-<div class="container">
-    <div class="card">
-        <div class="card-body">
+    {% else %}
+        <div class="container">
             <h1> </h1>
-            <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
-            <h1> </h1>
-            <audio controls>
-                <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
-                Your browser does not support the audio tag.
-            </audio>
         </div>
-    </div>
-</div>
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h1> </h1>
+                            <h4><strong>Upload An Image</strong></h4>
+                            <hr>
 
+                            <form action="/" method="POST" enctype="multipart/form-data" id="img-form">
 
-{% else %}
-<div class="container">
-    <h1> </h1>
-</div>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h1> </h1>
-                    <h4><strong>Upload An Image</strong></h4>
-                    <hr>
-
-                    <form action="/" method="POST" enctype="multipart/form-data" id="img-form">
-
-                        <div class="form-group">
-                            <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
-                            <select class="form-control" id="exampleFormControlSelect1" name="select" required>
-                              <option value="">--Select--</option>
-                              <option value="Kannada">Kannada</option>
-                              <option value="English">English</option>
-                              <option value="Hindi">Hindi</option>
-                              <option value="Sanskrit">Sanskrit</option>
-                            </select>
+                                <div class="form-group">
+                                    <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="select" required>
+                                        <option value="">--Select--</option>
+                                        <option value="Kannada">Kannada</option>
+                                        <option value="English">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <h6><strong>Drop a file below</strong></h6>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" onchange="showPreviewOne(event);" required>
+                                        <label class="custom-file-label" for="image">Select image...</label>
+                                    </div>
+                                </div>
+                                <div class="croper">
+                                    <img id="file-ip-1-preview" src="" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
+                                </div>
+                                <button type="submit" id="give" class="btn blue-gradient waves-effect" onclick="loadingDisplay()">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <h6><strong>Drop a file below</strong></h6>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" onchange="showPreviewOne(event);" required>
-                                <label class="custom-file-label" for="image">Select image...</label>
-                            </div>
-                        </div>
-                        <div class="croper">
-                            <img id="file-ip-1-preview" src="https://www.blueworx.com/wp-content/uploads/2019/09/placeholder-image-gray-16x9.png" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
-                        </div>
-                        <button type="submit" id="give" class="btn blue-gradient waves-effect" onclick="loadingDisplay()">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
-<!--loading symbol-->
-<link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-<div id="loader">
+        <!--loading symbol-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+        <div id="loader">
+        </div>
 
-</div>
-
-
-<script>
-    var imgName;
-
-    function showPreviewOne(event) {
-        if (event.target.files.length > 0) {
-            let src = URL.createObjectURL(event.target.files[0]);
-            imgName = src;
-            let preview = document.getElementById("file-ip-1-preview");
-            preview.src = src;
-            preview.style.display = "block";
-        } else {
-            myImgRemoveFunctionOne()
-        }
-    }
-
-    function myImgRemoveFunctionOne() {
-        document.getElementById("file-ip-1-preview").src = "https://www.blueworx.com/wp-content/uploads/2019/09/placeholder-image-gray-16x9.png";
-    }
-
-    const img_c = new ImageCropper(
-        ".cropper",
-        imgName
-    );
-</script>
-
-{%endif%} {% endblock %}
+    {% endif %} 
+    <script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+{% endblock %}
