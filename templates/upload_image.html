@@ -93,7 +93,7 @@
                                 <div class="croper">
                                     <img id="file-ip-1-preview" src="" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
                                 </div>
-                                <button type="submit" id="give" class="btn blue-gradient waves-effect" onclick="loadingDisplay()">UPLOAD  <i class="fas fa-upload mr-1"></i></button>
+                                <button type="submit" id="give" class="btn blue-gradient waves-effect" onclick="loadingDisplay()">UPLOAD </button>
                             </form>
                         </div>
                     </div>
@@ -108,8 +108,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
         <div id="loader">
         </div>
-
     {% endif %} 
+
     <script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+    
 {% endblock %}
