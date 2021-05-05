@@ -80,7 +80,7 @@ def langTranslator():
         try:
             translatedText = translator.translate(ORIGINAL_TEXT, lang_tgt = LANG_TO)
         except:
-            translatedText = translator.translate("Sorry.. Cant convert at this time :)", lang_src=LANG_FROM, lang_tgt = LANG_TO)
+            translatedText = translator.translate("Sorry.. Cant convert at this time :)", lang_tgt = LANG_TO)
         return jsonify(
             {"translatedText" : translatedText}
         )
