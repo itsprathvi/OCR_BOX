@@ -7,7 +7,7 @@
 {% block content %}
 
     {% if obj %}
-
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
             <div class="container">
                 <div class="card">
                     <div class="card-body">
@@ -101,18 +101,31 @@
             </div>
         </div>
 
-
         <!--loading symbol-->
         <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
         <div id="loader">
         </div>
     {% endif %} 
-
+    <div class="container">
+        <h1> </h1>
+    </div>
+        <div class="footer" style="position:fixed;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            left: 0;
+            bottom:0;
+            width: 100%;
+            background-color:rgb(44, 44, 119);
+            color:white;
+            font-size: medium;
+            text-align: center;">
+            <p> </p>
+            <h5><strong>Copyright : www.ocrbox.com All rights reserved</strong></h5>
+        </div>
     <script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+   
     
 {% endblock %}
