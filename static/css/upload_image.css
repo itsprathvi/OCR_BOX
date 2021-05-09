@@ -211,13 +211,17 @@ footer .social .link a:hover {
 }
 
 @media screen and (max-width: 1000px) {
+      .total-div {
+        display: block;
+    }
+    
     footer .copyright {
         padding: 2rem;
     }
     footer .copyright .loc,
     footer .copyright .phn,
     footer .copyright .mail {
-        display: block;
+        display: flex;
         padding: 0.5rem;
     }
     footer .copyright i {
