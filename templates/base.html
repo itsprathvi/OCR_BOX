@@ -22,18 +22,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 <!-- Navigation -->
 
-<body>
+<body style="background-color: #ddd;">
     <header>
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
             <div class="container">
 
                 <!-- Brand -->
-                <a class="navbar-brand waves-effect" style="font-size:30px;font-family: 'Carter One', cursive;" href="#">
-                    <h4><strong>SUSHIKSHA</strong></h4>
+                <a class="navbar-brand waves-effect" style="font-size:30px;font-family: 'Carter One', cursive;" href="https://sushiksha.konkanischolarship.com/">
+                                    <img style = "height: 60px;background: #ddd;" src="{{url_for('static', filename='img/sushiksha.jpg')}}">
                 </a>
                 <!-- Collapse -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +61,9 @@
         <!-- Navbar -->
 
         <!-- Intro -->
-        <div class="card card-intro blue-gradient">
+        <div class="card card-intro " style="background: #141E30;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);">
 
             <div class="card-body white-text rgba-black-light text-center">
 
@@ -67,13 +71,13 @@
                 <div class="row d-flex justify-content-center">
 
                     <!--Grid column-->
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="padding-top: 1rem;">
 
-                        <p class="h4 mb-2" style="font-size:40px; font-family: 'Kaushan Script', cursive;">
+                        <p class="h4 mb-2" style="font-size:40px; font-family: 'Cinzel', serif; color: #66FCf1">
                             OCR BOX
                         </p>
 
-                        <p class="mb-0" style="font-size:20px; font-family: 'Satisfy', cursive;">Optical Character Recognition Website</p>
+                        <p class="mb-0" style="font-size:20px; font-family: 'Cinzel', serif;  color: #c5c6c7; ">Optical Character Recognition Website</p>
 
                     </div>
                     <!--Grid column-->
@@ -89,6 +93,46 @@
 
     <!-- BLOCK CONTENT -->
     {% block content %} {% endblock %}
+
+    <!--Footer-->
+         <footer>
+                <div class="total-div ">
+            <div class="copyright">
+                <div class="loc">
+                    <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>Bull Temple Rd, Basavanagudi, 
+                    Bengaluru, Karnataka 560019</p>
+                </div>
+                <div class="phn">
+                    <div>
+                    <i class="fas fa-phone"></i>
+                    </div>
+                    <p>080 2662 2130</p>
+                </div>
+                <div class="mail">
+                    <div>
+                    <i class="fas fa-envelope"></i>
+                    </div>
+                    <a href="mailto:pcubedeveloper@gmail.com">pcubedeveloper@gmail.com</a>
+                </div>
+            </div>
+            <div class="social">
+                <h3><strong>An Initiative By :</strong></h3>
+                <img style = "width: 300px;background: #ddd;" src="{{url_for('static', filename='img/wkcc.png')}}">
+                <div class="link">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/adigapranava/PCUBE"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="social" style = ";">
+                <img style = "width: 200px;background: #ddd;" src="{{url_for('static', filename='img/sushiksha.jpg')}}">
+            </div>
+            </div>
+            </footer>
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

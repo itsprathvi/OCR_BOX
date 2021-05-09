@@ -1,0 +1,135 @@
+/* defining the heading of the webpage */
+
+.Header {
+    color: blueviolet;
+    align-self: center;
+}
+
+body {
+    display: block;
+}
+
+.inputImg {
+    position: absolute;
+    max-width: 500px;
+    max-height: 300px;
+}
+
+
+/* Designing the div containing the image to be cropped */
+
+.inputImageDiv {}
+
+.inputImageCanvas {
+    border: 1px solid black;
+    float: left;
+    z-index: 1;
+    /* position: absolute; */
+}
+
+.image {
+    position: absolute;
+    z-index: 10;
+    top: 600px;
+    visibility: hidden;
+    /* clip: rect(20px,200px,200px,20px); */
+}
+
+
+/* creating a div with grid layout to form the cropper */
+
+.grid {
+    z-index: 4;
+    border: 1px dashed rgb(8, 8, 8);
+    background-color: rgba(19, 18, 18, 0.432);
+    /* position: absolute; */
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+/* giving dotted borders to all the divs inside the main div to create the cropper gridlines */
+
+.grid>div {
+    border: 1px dashed rgb(5, 5, 5);
+    visibility: hidden;
+    position: relative;
+}
+
+
+/* hiding all the corner divs by default on page load */
+
+.grid>div>div {
+    visibility: hidden;
+    width: 5px;
+    height: 5px;
+    z-index: 3;
+    position: absolute;
+}
+
+
+/* defining all the corner points in the grid */
+
+.topleftmark {
+    border-left: 5px solid grey;
+    border-top: 5px solid grey;
+    z-index: 3;
+    cursor: nwse-resize;
+}
+
+.toprightmark {
+    border-right: 5px solid grey;
+    border-top: 5px solid grey;
+    right: 0px;
+    cursor: nesw-resize;
+}
+
+.bottomleftmark {
+    border-left: 5px solid grey;
+    border-bottom: 5px solid red;
+    left: 0px;
+    bottom: 0px;
+    cursor: nesw-resize;
+}
+
+.bottomrightmark {
+    border-bottom: 5px solid grey;
+    border-right: 5px solid grey;
+    right: 0px;
+    bottom: 0px;
+    cursor: nwse-resize;
+}
+
+.leftmark {
+    width: 5px;
+    height: 5px;
+    border-left: 5px solid grey;
+    z-index: 3;
+    left: 0px;
+    top: 50%;
+    cursor: w-resize;
+}
+
+.rightmark {
+    border-right: 5px solid grey;
+    z-index: 3;
+    right: 0px;
+    top: 50%;
+    cursor: w-resize;
+}
+
+.topmark {
+    border-top: 5px solid grey;
+    top: 0px;
+    left: 50%;
+    cursor: n-resize;
+}
+
+.bottommark {
+    border-bottom: 5px solid grey;
+    bottom: 0px;
+    left: 50%;
+    cursor: n-resize;
+}

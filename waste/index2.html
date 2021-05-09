@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="main2.css">
+    <title>Image Croper</title>
+    <script src="script2.js"></script>
+</head>
+
+<body onload="runOnLoad()">
+
+    <!-- the following div has the image to be cropped -->
+    <input type="file" name="ipFile" id="ipfile" onchange="showPreviewOne(event)">
+
+    <div class="inputImageDiv">
+        <img src="../static/img/uploads/Screenshot from 2020-10-18 10-48-34.png" class="inputImg" id="file-ip-1-preview">
+        <div class="inputImageCanvas ">
+            <!--the following div has the grid with 0.5 opacity and grid layout-  -->
+            <div class="grid" id="grid">
+                <!-- the following div is placed inside the translucent div with dashed borders. this forms the grid lines -->
+                <div class="TL">
+                    <!-- the following div forms the corners which have the event listners -->
+                    <div class="topleftmark"></div>
+                </div>
+                <div class="TC ">
+                    <div class="topmark"></div>
+                </div>
+                <div class="TR ">
+                    <div class="toprightmark"></div>
+                </div>
+                <div class="ML ">
+                    <div class="leftmark"></div>
+                </div>
+                <div class="MC"> </div>
+                <div class="MR ">
+                    <div class="rightmark"></div>
+                </div>
+                <div class="BL ">
+                    <div class="bottomleftmark"></div>
+                </div>
+                <div class="BC ">
+                    <div class="bottommark"></div>
+                </div>
+                <div class="BR ">
+                    <div class="bottomrightmark"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!--  this is used to make  -->
+    <button class="crop"> CROP THE IMAGE </button>
+    <button class="save"> SAVE </button>
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/beagle400.jpg' class='image'>
+    <!-- <canvas class="canvas"></canvas> -->
+
+</body>
+
+</html>

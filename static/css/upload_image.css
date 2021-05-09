@@ -133,3 +133,127 @@ body {
     display: none;
 }
 
+
+/* Footer */
+
+footer {
+    margin-top: 3rem;
+    width: 100%;
+    min-height: 300px;
+    color: #66fcf1;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: #0B0c10;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0B0c10, #1f2833);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right#0B0c10, #1f2833, );
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.total-div {
+    display: flex;
+}
+
+footer .copyright {
+    padding: 4rem;
+}
+
+footer .copyright .loc,
+footer .copyright .phn,
+footer .copyright .mail {
+    display: flex;
+    padding: 1rem;
+}
+
+footer .copyright i {
+    background-color: #fff;
+    color: #2c2626;
+    padding: 0.75rem;
+    border-radius: 50%;
+}
+
+footer .copyright p,
+footer .copyright a {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    max-width: 200px;
+}
+
+footer .social {
+    padding: 4rem;
+    text-align: center;
+}
+
+footer .social h3 {
+    padding: 1rem;
+    font-size: 30px;
+}
+
+footer .social p {
+    max-width: 350px;
+    text-align: left;
+}
+
+footer .social .link {
+    padding-top: 2rem;
+}
+
+footer .social .link a {
+    margin-right: 1rem;
+    background-color: #ffff;
+    padding: 0.75rem;
+    color: #2c2626;
+    border-radius: 5px;
+}
+
+footer .social .link a:hover {
+    color: #FF0161;
+}
+
+@media screen and (max-width: 1000px) {
+    footer .copyright {
+        padding: 2rem;
+    }
+    footer .copyright .loc,
+    footer .copyright .phn,
+    footer .copyright .mail {
+        display: block;
+        padding: 0.5rem;
+    }
+    footer .copyright i {
+        background-color: #fff;
+        color: #2c2626;
+        padding: 0.75rem;
+        border-radius: 50%;
+    }
+    footer .copyright p,
+    footer .copyright a {
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        max-width: 200px;
+    }
+    footer .social {
+        padding: 2rem;
+        text-align: center;
+    }
+    footer .social h3 {
+        padding: 0.5rem;
+        font-size: 28px;
+    }
+    footer .social p {
+        max-width: 350px;
+        text-align: left;
+    }
+    footer .social .link {
+        padding-top: 2rem;
+    }
+    footer .social .link a {
+        margin-right: 1rem;
+        background-color: #ffff;
+        padding: 0.75rem;
+        color: #2c2626;
+        border-radius: 5px;
+    }
+    footer .social .link a:hover {
+        color: #FF0161;
+    }
+}

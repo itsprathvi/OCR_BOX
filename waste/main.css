@@ -1,0 +1,157 @@
+/* defining the heading of the webpage */
+
+.Header {
+    color: blueviolet;
+    align-self: center;
+}
+
+
+/* Designing the div containing the image to be cropped */
+
+.inputImage {
+    width: 900px;
+    height: 500px;
+    max-width: 900px;
+    max-height: 500px;
+    border: 1px solid black;
+    /*dynamic*/
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/beagle400.jpg");
+    background-size: 100%;
+    float: left;
+    z-index: 1;
+    /* position: absolute; */
+}
+
+.image {
+    position: absolute;
+    z-index: 10;
+    top: 600px;
+    visibility: hidden;
+    /* clip: rect(20px,200px,200px,20px); */
+}
+
+
+/* Designing the crop button  */
+
+.crop {
+    color: blueviolet;
+    fill: rgb(75, 11, 134);
+    float: left;
+    position: relative;
+    margin: 25px;
+}
+
+
+/* Designing the save button  */
+
+.save {
+    color: blueviolet;
+    fill: rgb(75, 11, 134);
+    float: left;
+    position: relative;
+    margin: 25px;
+    visibility: hidden;
+}
+
+
+/* creating a div with grid layout to form the cropper */
+
+.grid {
+    z-index: 4;
+    border: 1px dashed white;
+    background-color: rgba(238, 184, 184, 0.5);
+    position: absolute;
+    visibility: hidden;
+    width: 900px;
+    height: 500px;
+    max-width: 900px;
+    max-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+/* giving dotted borders to all the divs inside the main div to create the cropper gridlines */
+
+.grid>div {
+    border: 1px dashed rgb(247, 247, 247);
+    visibility: hidden;
+    position: relative;
+}
+
+
+/* hiding all the corner divs by default on page load */
+
+.grid>div>div {
+    visibility: hidden;
+    width: 5px;
+    height: 5px;
+    z-index: 3;
+    position: absolute;
+}
+
+
+/* defining all the corner points in the grid */
+
+.topleftmark {
+    border-left: 5px solid grey;
+    border-top: 5px solid grey;
+    z-index: 3;
+    cursor: nwse-resize;
+}
+
+.toprightmark {
+    border-right: 5px solid grey;
+    border-top: 5px solid grey;
+    right: 0px;
+    cursor: nesw-resize;
+}
+
+.bottomleftmark {
+    border-left: 5px solid grey;
+    border-bottom: 5px solid red;
+    left: 0px;
+    bottom: 0px;
+    cursor: nesw-resize;
+}
+
+.bottomrightmark {
+    border-bottom: 5px solid grey;
+    border-right: 5px solid grey;
+    right: 0px;
+    bottom: 0px;
+    cursor: nwse-resize;
+}
+
+.leftmark {
+    width: 5px;
+    height: 5px;
+    border-left: 5px solid grey;
+    z-index: 3;
+    left: 0px;
+    top: 50%;
+    cursor: w-resize;
+}
+
+.rightmark {
+    border-right: 5px solid grey;
+    z-index: 3;
+    right: 0px;
+    top: 50%;
+    cursor: w-resize;
+}
+
+.topmark {
+    border-top: 5px solid grey;
+    top: 0px;
+    left: 50%;
+    cursor: n-resize;
+}
+
+.bottommark {
+    border-bottom: 5px solid grey;
+    bottom: 0px;
+    left: 50%;
+    cursor: n-resize;
+}

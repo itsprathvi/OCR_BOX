@@ -24,6 +24,12 @@ def upload_image():
 
             l = request.form['select']
             image = request.files["image"]
+
+            # X = int(request.form['x-pos'])
+            # Y = int(request.form['y-pos'])
+            # WIDTH = int(request.form['width'])
+            # HEIGHT = int(request.form['height'])
+            
             filename = image.filename
 
             if l == "Kannada":
