@@ -126,6 +126,13 @@ body {
     }
 }
 
+@media  only screen and (max-width: 1300px){
+    .loader{
+        margin-top: 30px;
+        padding-left: 30px !important;
+    }
+    
+}
 
 /* Drop down */
 
