@@ -46,3 +46,19 @@ body {
     padding: 0;
 }
 
+#notification-container {
+    position: fixed;
+    bottom: 10px;
+    right: 80px;
+}
+
+.taste {
+    background-color: #e0e0e0;
+    color: #1d1d1c;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    box-shadow: 2px 2px 10px rgb(41, 39, 39);
+    position: relative;
+    z-index: 1000;
+}

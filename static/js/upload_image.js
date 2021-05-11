@@ -1,12 +1,39 @@
 let WEB_URL = window.location.origin;
 
-var clipboard = new ClipboardJS(".btn");
-clipboard.on('success', function() {
-    M.toast({
-        html: "copied successfully",
-        classes: "white"
-    });
-});
+//notification
+function copyextracted(){
+    copyText(ORIGINAL_TEXT);
+}
+
+function copytranslate(){
+    copyText(TRANSLATEDTEXT);
+}
+
+function createNotification(text) {
+    const container = document.getElementById('notification-container')
+    const notif = document.createElement('div');
+    notif.classList.add('taste');
+    notif.innerHTML = text
+    container.appendChild(notif);
+    setTimeout(() => {
+        notif.remove();
+    }, 3000)
+}
+
+function copyText(text) {
+    var temp = document.createElement('input');
+    temp.value = text;
+    var body = document.getElementsByTagName('body')[0];
+    body.appendChild(temp);
+    temp.select();
+    temp.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    temp.remove();
+
+    createNotification("Copied Successfully");
+}
+
+
 
 // loading symbol displayer
 function loadingDisplay(params) {
@@ -89,6 +116,9 @@ async function addLanguages() {
 // Translated text getter
 ORIGINAL_TEXT = document.getElementById("content").innerText;
 
+var TRANSLATEDTEXT;
+
+
 async function getTranslatedText(txt, langTo) {
     let _data = {
         ORIGINAL_TEXT: txt,
@@ -135,8 +165,10 @@ async function translateNow() {
     var para = document.getElementById("transText");
 
     para.innerText = translatedText["translatedText"];
-}
 
+    TRANSLATEDTEXT = translatedText["translatedText"];
+}
+    
 addLanguages();
 
 // Dropdown
