@@ -1,5 +1,4 @@
 <p align="center">
-    <h3> An Initiative By </h3>
     <img src="https://vkssfalumni.com/wp-content/uploads/2016/11/sushikshalogo-300x300.png" alt="Sushiksha-lOGO" border="0" width=300 height=300/>&nbsp; </a>
 </p>
     
