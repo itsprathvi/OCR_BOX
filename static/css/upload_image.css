@@ -126,12 +126,36 @@ body {
     }
 }
 
-@media  only screen and (max-width: 1300px){
-    .loader{
-        margin-top: 30px;
-        padding-left: 30px !important;
+@media only screen and (max-width: 500px){
+    .text-load {
+        position: absolute;
+        bottom: 0px;
+        left: -100px;
+        font-family: 'Zen Dots', cursive;
+        color: #cfcece;
+        font-weight: 900;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
     }
-    
+
+    .loader-div {
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background-color: #111111d5;
+        position: fixed;
+        top: 0;
+    }
+
+    .loader {
+        width: 80px;
+        height: 67px;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: scale(1.2, 1.2);
+    }
 }
 
 /* Drop down */
