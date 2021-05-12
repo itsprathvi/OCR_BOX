@@ -2,7 +2,7 @@
     <img src="https://vkssfalumni.com/wp-content/uploads/2016/11/sushikshalogo-300x300.png" alt="Sushiksha-lOGO" border="0" width=300 height=300/>&nbsp; </a>
 </p>
 
-<p class="text-center mb-3" align="center">
+<p class="text-center mb-3" style="text-align : center">
     <a href="https://ocr-converter.herokuapp.com/"><h3>OCR BOX</h3></a>
 </p>
 
