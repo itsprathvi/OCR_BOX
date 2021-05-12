@@ -9,8 +9,6 @@
     
 <p class="text-center mb-3" align="center">
    <a href="https://ocr-converter.herokuapp.com/"><img src="https://forthebadge.com/images/badges/made-with-python.svg" border="0" title="Made with Python" /></a></p>
-<p class="text-center mb-3" align="center">
-   <a href="https://ocr-converter.herokuapp.com/"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/general-ocr-559832.png" border="0" title="Made with Python" /></a></p>
       
 <p class="text-center mb-3" align="center">
 <a href="http://www.djangoproject.com/"><img src="https://myrusakov.ru/images/articles/python-flask-framework-intro.png" border="0" alt="Powered by Flask" title="Powered by Flask" /></a>
