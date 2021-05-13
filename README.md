@@ -103,4 +103,4 @@
    ## License
    [Apache License 2.0](https://github.com/PrathvirajPrabhu/my-ocr/blob/master/LICENSE)
    
-<h6 align="center">THANK YOU</h6>
+<h5 align="center">--THANK YOU--</h5>
