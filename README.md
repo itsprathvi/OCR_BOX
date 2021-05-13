@@ -13,5 +13,26 @@
 <p class="text-center mb-3" align="center">
 <a href="http://www.djangoproject.com/"><img src="https://myrusakov.ru/images/articles/python-flask-framework-intro.png" border="0" alt="Powered by Flask" title="Powered by Flask" /></a>
 </p>
+  
+OCR BOX is the Optical character recognition website which was taken initiave by World Konkani Center Mangalore.
+   
+   <!-- TABLE OF CONTENTS -->
+   <details open="open">
+     <summary>Table of Contents</summary>
+     <ol>
+       <li>
+         <ul>
+           <li><a href="#installation">Installation</a></li>
+           <li><a href="#development">Development</a></li>
+         </ul>
+       </li>
+       <li><a href="#contributing">Contributing / Adding Features</a></li>
+       <li><a href="#license">License</a></li>
+     </ol>
+   </details>
    
    
+   1. Backend Framework: **Flask**
+   2. Front-end Framework: **MDBootstrap**
+   
+   ## Installation 
