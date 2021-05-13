@@ -80,25 +80,23 @@
    
    ## Development
    
-       git checkout develop-<username>
-       //Create the changes and then commit
-       git add <filename>
-       git commit -m "<Message here>"
+           git checkout develop-<username>
+           //Create the changes and then commit
+           git add <filename>
+           git commit -m "<Message here>"
        
-   From your `master` branch or your main branch that you are working on, give a PR to our `develop` branch.
-   
-   Developers should create a folder /media and put an image named `default.jpg` to avoid errors in creating superuser.
-   
-   `!IMPORTANT`: Don't give a PR to the master branch
-   We only accept PR's to `develop` branch.
-   
-      
-   
+       From your `master` branch or your main branch that you are working on, give a PR to our `develop` branch.
+
+       Developers should create a folder /media and put an image named `default.jpg` to avoid errors in creating superuser.
+
+       `!IMPORTANT`: Don't give a PR to the master branch
+       We only accept PR's to `develop` branch.
+
+
+
    ## Contributing
-  Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-  While sending the PR please mention the issue in the Comment.
-   
-   **Note: PR's are accepted that are sent only by Sushiksha members.**
+      Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+      While sending the PR please mention the issue in the Comment.
    
    ## License
    [Apache License 2.0](https://github.com/PrathvirajPrabhu/my-ocr/blob/master/LICENSE)
