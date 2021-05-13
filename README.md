@@ -95,10 +95,10 @@
       
    
    ## Contributing
-      Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-      While sending the PR please mention the issue in the Comment.
+  Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+  While sending the PR please mention the issue in the Comment.
    
-   **Note: PR's are accepted that are sent only by Sushiksha members **
+   **Note: PR's are accepted that are sent only by Sushiksha members.**
    
    ## License
    [Apache License 2.0](https://github.com/PrathvirajPrabhu/my-ocr/blob/master/LICENSE)
