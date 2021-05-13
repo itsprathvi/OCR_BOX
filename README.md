@@ -10,7 +10,7 @@
 <p class="text-center mb-3" align="center">
    <a href="https://ocr-converter.herokuapp.com/"><img src="https://forthebadge.com/images/badges/made-with-python.svg" border="0" title="Made with Python" /></a></p>
 <p class="text-center mb-3" align="center">
-   <a><img alt="Powered by Flask" src="https://img.shields.io/badge/POWERED%20BY-Flask%3D%3D1.1.2-yellowgreen"></a></p>
+   <a href="https://pypi.org/project/Flask/" alt="Powered by Flask" src="https://img.shields.io/badge/POWERED%20BY-Flask%3D%3D1.1.2-yellowgreen"></a></p>
    
 <p class="text-center mb-3" align="center">
 <a href="http://www.djangoproject.com/"><img src="https://myrusakov.ru/images/articles/python-flask-framework-intro.png" border="0" alt="Powered by Flask" title="Powered by Flask" /></a>
