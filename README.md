@@ -41,3 +41,33 @@
    2. Front-end Framework: **MDBootstrap**
    
    ## Installation 
+   
+   1. Fork and Clone
+       <ol>
+       <li>Fork my-ocr the Repo </li>
+       <li>Clone the repo to your computer </li>
+       </ol>
+   
+   2. Create a Virtual Environment for the Project
+   
+       In Windows
+       ```bash
+       python -m venv venv
+       
+       venv\Scripts\activate
+       ```
+   
+       In Ubuntu/MacOS
+       ```bash
+       python -m virtualenv venv
+       
+       source venv/bin/activate
+       ```
+      
+      If you are giving a different name then `venv`, then please mention it in `.gitigonre` first
+   
+   3. Install all the requirements
+   
+       ```bash
+       pip install -r requirements.txt
+       ```
