@@ -18,7 +18,7 @@
 <a href="http://www.djangoproject.com/"><img src="https://myrusakov.ru/images/articles/python-flask-framework-intro.png" border="0" alt="Powered by Flask" title="Powered by Flask" /></a>
 </p>
 <p align="center">
-    OCR BOX is the Optical character recognition website which was taken initiave by World Konkani Center Mangalore....continuesssssss
+    OCR BOX is the Optical character recognition website which was taken initiave by World Konkani Center Mangalore.It converts text from a image to real text and Audio file
 </p>
    
    <!-- TABLE OF CONTENTS -->
