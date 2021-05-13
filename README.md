@@ -101,4 +101,4 @@
    **Note: PR's are accepted that are sent only by Sushiksha members **
    
    ## License
-   [Apache License 2.0](https://github.com/18praneeth/sushiksha-website/blob/master/LICENSE)
+   [Apache License 2.0](https://github.com/PrathvirajPrabhu/my-ocr/blob/master/LICENSE)
