@@ -18,7 +18,7 @@
 <a href="http://www.djangoproject.com/"><img src="https://myrusakov.ru/images/articles/python-flask-framework-intro.png" border="0" alt="Powered by Flask" title="Powered by Flask" /></a>
 </p>
 <p align="center">
-    OCR BOX is the Optical character recognition website which was taken initiave by World Konkani Center Mangalore.It converts text from a image to real text and Audio file
+    Ever felt a need for an assistant who could help you in typing the text from real images? Here you have got the OCR BOX to the rescue. This website with the OCR BOX not only helps you to extract the texts from the images but also translates them to the desired language. The translation option ranges for about 106 languages in the world. The icing on the cake is that the content in the image can be converted to an audio file. The user-friendly UI simplifies your task of extraction and conversion.
 </p>
    
    <!-- TABLE OF CONTENTS -->
