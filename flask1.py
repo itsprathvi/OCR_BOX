@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, jsonify
 import pytesseract
 from PIL import Image
 import json
+
 import os
 from gtts import gTTS
 from google_trans_new import google_translator
