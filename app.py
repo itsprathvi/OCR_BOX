@@ -4,7 +4,7 @@ from PIL import Image
 import json
 import os
 from gtts import gTTS
-from google_trans_new import google_translator
+from .google_trans_new import google_translator
 
 app = Flask(__name__)
 
