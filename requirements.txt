@@ -1,5 +1,4 @@
 appdirs==1.4.4
-apturl==0.5.2
 asgiref==3.2.10
 astroid==2.4.2
 autopep8==1.5.7
