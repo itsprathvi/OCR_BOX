@@ -48,13 +48,13 @@ def upload_image():
             image = Image.open(image_url)
 
             # extracting text from image
-            try:
-                imageText = pytesseract.image_to_string(image, lang=language)
-                if(not(imageText)):
-                    imageText = "No Text Found"
-            except:
-                print("Error")
+            # try:
+            imageText = pytesseract.image_to_string(image, lang=language)
+            if(not(imageText)):
                 imageText = "No Text Found"
+            # except:
+            #     print("Error")
+            #     imageText = "No Text Found"
 
             if l == "Kannada":
                 language = 'kn'
