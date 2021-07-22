@@ -1,2 +1,3 @@
 https://github.com/heroku/heroku-buildpack-LANG
 https://github.com/matteotiziano/heroku-buildpack-tesseract
+https://github.com/heroku/heroku-buildpack-apt
