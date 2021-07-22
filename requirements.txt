@@ -1,7 +1,6 @@
 astroid==2.4.2
 attrs==19.3.0
 backcall==0.2.0
-beautifulsoup4==4.9.1
 bleach==3.1.5
 certifi==2020.4.5.2
 chardet==3.0.4
@@ -34,10 +33,6 @@ itsdangerous==1.1.0
 jedi==0.17.1
 Jinja2==2.11.2
 jsonschema==3.2.0
-jupyter==1.0.0
-jupyter-client==6.1.5
-jupyter-console==6.1.0
-jupyter-core==4.6.3
 kiwisolver==1.2.0
 language==0.6
 lazy-object-proxy==1.4.3
@@ -49,9 +44,7 @@ mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
 notebook==6.0.3
-numpy==1.19.0
 packaging==20.4
-pandas==1.0.5
 pandocfilters==1.4.2
 parso==0.7.0
 pickleshare==0.7.5
