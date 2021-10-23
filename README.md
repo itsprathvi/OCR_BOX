@@ -40,7 +40,7 @@
    1. Backend Framework: **Flask**
    2. Front-end Framework: **MDBootstrap**
    
-   ## Installation 
+   ## INSTALLATION 
    
    1. Fork and Clone
        <ol>
@@ -78,7 +78,7 @@
        ```
    5. Do the Development and send me a PR referencing the issue.
    
-  ## Development
+  ## DEVELOPMENT
    
        git checkout develop-<username>
        //Create the changes and then commit
@@ -94,11 +94,11 @@
 
 
 
- ## Contributing
+ ## CONTRIBUTIONS
   Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
   While sending the PR please mention the issue in the Comment.
    
- ## License
+ ## LICENSE
   [Apache License 2.0](https://github.com/PrathvirajPrabhu/my-ocr/blob/master/LICENSE)
    
 <h5 align="center">---THANK YOU---</h5>
