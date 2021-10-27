@@ -5,6 +5,7 @@ import json
 import os
 from gtts import gTTS
 from google_trans_new2 import google_translator
+import constant
 
 app = Flask(__name__)
 
@@ -37,6 +38,8 @@ def upload_image():
                 language = 'kan'
             elif l == "English":
                 language = 'eng'
+            elif l == "Hindi":
+                language = 'hin'
             elif l == "Hindi":
                 language = 'hin'
 
@@ -75,10 +78,10 @@ def upload_image():
             return render_template("upload_image.html", obj=obj)
 
     else:
-        return render_template("upload_image.html")
+        return render_template("upload_image.html", langs = constant.LANGUAGES.values())
 
 
-@app.route("/langTranslator", methods=["GET", "POST"])
+@app.route("/langTranslator", methods=["GET", "POST"])  # GET never used
 def langTranslator():
     translator = google_translator()
     if request.method == "POST":
