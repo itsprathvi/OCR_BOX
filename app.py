@@ -34,14 +34,14 @@ def upload_image():
 
             filename = image.filename
 
-            if l == "Kannada":
-                language = 'kan'
-            elif l == "English":
-                language = 'eng'
-            elif l == "Hindi":
-                language = 'hin'
-            elif l == "Hindi":
-                language = 'hin'
+            langCode = list(constant.LANGUAGES.keys())
+            print(langCode)
+            langName = list(constant.LANGUAGES.values())
+            print(langName)
+
+            langIdx = langName.index(l)
+            language = langCode[langIdx]
+            print('@@@@@@@@@@@@@@@@@@@@@@'+language)
 
             image.save(os.path.join(app.root_path,
                        'static/img/uploads', filename))
@@ -65,6 +65,8 @@ def upload_image():
                 language = 'en'
             elif l == "Hindi":
                 language = 'hi'
+            else:
+                language = 'en'
 
             myObj = gTTS(text=imageText, lang=language, slow=False)
             audioFile = getAudioUrl(filename)
