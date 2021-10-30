@@ -5,6 +5,7 @@ import json
 import os
 from gtts import gTTS
 from google_trans_new2 import google_translator
+import constant
 
 app = Flask(__name__)
 
@@ -33,12 +34,14 @@ def upload_image():
 
             filename = image.filename
 
-            if l == "Kannada":
-                language = 'kan'
-            elif l == "English":
-                language = 'eng'
-            elif l == "Hindi":
-                language = 'hin'
+            langCode = list(constant.LANGUAGES.keys())
+            print(langCode)
+            langName = list(constant.LANGUAGES.values())
+            print(langName)
+
+            langIdx = langName.index(l)
+            language = langCode[langIdx]
+            print('@@@@@@@@@@@@@@@@@@@@@@'+language)
 
             image.save(os.path.join(app.root_path,
                        'static/img/uploads', filename))
@@ -62,6 +65,8 @@ def upload_image():
                 language = 'en'
             elif l == "Hindi":
                 language = 'hi'
+            else:
+                language = 'en'
 
             myObj = gTTS(text=imageText, lang=language, slow=False)
             audioFile = getAudioUrl(filename)
@@ -75,10 +80,10 @@ def upload_image():
             return render_template("upload_image.html", obj=obj)
 
     else:
-        return render_template("upload_image.html")
+        return render_template("upload_image.html", langs = constant.LANGUAGES.values())
 
 
-@app.route("/langTranslator", methods=["GET", "POST"])
+@app.route("/langTranslator", methods=["GET", "POST"])  # GET never used
 def langTranslator():
     translator = google_translator()
     if request.method == "POST":

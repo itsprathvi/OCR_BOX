@@ -74,7 +74,7 @@
     
    4. Run server
        ```bash
-       python flask1.py 
+       python app.py 
        ```
    5. Do the Development and send me a PR referencing the issue.
    

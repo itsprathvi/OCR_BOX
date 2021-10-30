@@ -81,9 +81,9 @@
                                     <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
                                     <select class="form-control" id="exampleFormControlSelect1" name="select" required>
                                         <option value="">--Select--</option>
-                                        <option value="Kannada">Kannada</option>
-                                        <option value="English">English</option>
-                                        <option value="Hindi">Hindi</option>
+                                        {% for lang in langs%}
+                                            {<option value={{lang}}>{{lang}}</option>}
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <div class="form-group">
