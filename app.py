@@ -27,11 +27,6 @@ def upload_image():
             l = request.form['select']
             image = request.files["image"]
 
-            # X = int(request.form['x-pos'])
-            # Y = int(request.form['y-pos'])
-            # WIDTH = int(request.form['width'])
-            # HEIGHT = int(request.form['height'])
-
             filename = image.filename
 
             langCode = list(constant.LANGUAGES.keys())
@@ -41,7 +36,7 @@ def upload_image():
 
             langIdx = langName.index(l)
             language = langCode[langIdx]
-            print('@@@@@@@@@@@@@@@@@@@@@@'+language)
+            print(language, end="\n")
 
             image.save(os.path.join(app.root_path,
                        'static/img/uploads', filename))
@@ -80,7 +75,7 @@ def upload_image():
             return render_template("upload_image.html", obj=obj)
 
     else:
-        return render_template("upload_image.html", langs = constant.LANGUAGES.values())
+        return render_template("upload_image.html", langs=constant.LANGUAGES.values())
 
 
 @app.route("/langTranslator", methods=["GET", "POST"])  # GET never used
@@ -112,24 +107,5 @@ def langAvailable():
     )
 
 
-# @app.route("/kanTranslated", methods=["GET", "POST"])
-# def kanTranslated():
-#     if l == "Kannada":
-#                 language = 'kn'
-#             elif l == "English":
-#                 language = 'eng'
-#             elif l == "Hindi":
-#                 language = 'hi'
-#             elif l == "Sanskrit":
-#                 language = 'snk'
-
-#             try:
-#                 kanText = translator.translate(imageText, lang_src=language, lang_tgt = 'kn')
-#             except:
-#                 kanText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'kn')
-#             try:
-#                 hinText = translator.translate(imageText, lang_src=language, lang_tgt = 'hi')
-#             except:
-#                 hinText = translator.translate("Can't convert, Sorry!!", lang_src=language, lang_tgt = 'hi')
 if __name__ == "__main__":
     app.run(debug=True)
