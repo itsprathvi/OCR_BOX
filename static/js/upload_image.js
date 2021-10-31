@@ -1,11 +1,11 @@
 let WEB_URL = window.location.origin;
 
 //notification
-function copyextracted(){
+function copyextracted() {
     copyText(ORIGINAL_TEXT);
 }
 
-function copytranslate(){
+function copytranslate() {
     copyText(TRANSLATEDTEXT);
 }
 
@@ -38,7 +38,7 @@ function copyText(text) {
 // loading symbol displayer
 function loadingDisplay(params) {
     var formFilled = true;
-    document.getElementById("img-form").querySelectorAll("[required]").forEach(function(i) {
+    document.getElementById("img-form").querySelectorAll("[required]").forEach(function (i) {
         if (!i.value) {
             formFilled = false;
             return;
@@ -69,23 +69,11 @@ function myImgRemoveFunctionOne() {
     document.getElementById("file-ip-1-preview").src = "";
 }
 
-//get langset
-// async function getLanguageSet() {
-//     await fetch(WEB_URL + '/langAvailable', {
-//             method: "GET"
-//         })
-//         .then(response => response.json())
-//         .then(json => {
-//             console.log(json);
-//             langSets = json;
-//         });
-// }
-
 async function addLanguages() {
     let langSets;
     await fetch(WEB_URL + '/langAvailable', {
-            method: "GET"
-        })
+        method: "GET"
+    })
         .then(response => response.json())
         .then(json => {
             console.log(json);
@@ -127,10 +115,10 @@ async function getTranslatedText(txt, langTo) {
     var translatedText
 
     await fetch(WEB_URL + '/langTranslator', {
-            method: "POST",
-            body: JSON.stringify(_data),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        })
+        method: "POST",
+        body: JSON.stringify(_data),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
         .then(response => response.json())
         .then(json => {
             console.log(json);
@@ -148,10 +136,10 @@ async function translateNow() {
     var translatedText
 
     await fetch(WEB_URL + '/langTranslator', {
-            method: "POST",
-            body: JSON.stringify(_data),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        })
+        method: "POST",
+        body: JSON.stringify(_data),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
         .then(response => response.json())
         .then(json => {
             console.log(json);
@@ -168,7 +156,5 @@ async function translateNow() {
 
     TRANSLATEDTEXT = translatedText["translatedText"];
 }
-    
-addLanguages();
 
-// Dropdown
+addLanguages();

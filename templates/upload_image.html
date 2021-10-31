@@ -1,122 +1,127 @@
 {% extends "base.html" %}
 
 
-{% block title %} OCR BOX {% endblock %} 
- 
- 
+{% block title %} OCR BOX {% endblock %}
+
+
 {% block content %}
 
-    {% if obj %}
-    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
-            <div class="container">
-                <h1> </h1>
-            </div>
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
+{% if obj %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+<div class="container">
+    <h1> </h1>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
 
-                        <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
-                        <p class="lead" id="content">{{obj.imgText}}</p>
-                    </div>
-                </div>
-                <div class="card-action">
-                    <button class="btn btn-success" onclick="copyextracted()"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-                </div>
-
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-            </div>
-
-
-
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <h1> </h1>
-                        <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
-                        <h1> </h1>
-                        <audio controls>
-                            <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
-                            Your browser does not support the audio tag.
-                        </audio>
-                    </div>
-                </div>
-            </div>
-            
-            <!--DROPDOWN-->
-        <div class="container">
-                <select id="languages" class="d-inline p-2 mb-2 bg-dark text-white">
-                </select>
-                <button class="d-inline btn btn-primary" onclick="translateNow()">Translate</button>
+            <h6><strong>EXTRACTED TEXT <i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="content">{{obj.imgText}}</p>
         </div>
-
-        <div class="container" id="tranContainer">
-            <div class="card">
-                <div class="card-body">
-                    <h6><strong>TRANSLATED TEXT<i class="fas fa-book-reader"></i></strong></h6>
-                    <p class="lead" id="transText"></p>
-                </div>
-            </div>
-            <div class="card-action">
-                <button class="btn btn-success" onclick="copytranslate()"><i class="fas fa-copy mr-1">  Copy Text</i></button>
-            </div>
-        </div>
-
-    {% else %}
-        <div class="container">
-            <h1> </h1>
-        </div>
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h1> </h1>
-                            <h4><strong>Upload An Image</strong></h4>
-                            <hr>
-
-                            <form action="/" method="POST" enctype="multipart/form-data" id="img-form">
-
-                                <div class="form-group">
-                                    <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
-                                    <select class="form-control" id="exampleFormControlSelect1" name="select" required>
-                                        <option value="">--Select--</option>
-                                        {% for lang in langs%}
-                                            {<option value={{lang}}>{{lang}}</option>}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <h6><strong>Drop a file below</strong></h6>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" onchange="showPreviewOne(event);" required>
-                                        <label class="custom-file-label" for="image">Select image...</label>
-                                    </div>
-                                </div>
-                                <div class="croper">
-                                    <img id="file-ip-1-preview" src="" style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
-                                </div>
-                                <button type="submit" id="give" class="btn waves-effect" onclick="loadingDisplay()" style="background: #1f2833; color: #ddd; border-radius:5px; font-weight: 400; letter-spacing:1px;">UPLOAD </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--loading symbol-->
-        <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-        <div id="loader">
-        </div>
-    {% endif %} 
-    <div class="container">
-        <h1> </h1>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" onclick="copyextracted()"><i class="fas fa-copy mr-1"> Copy Text</i></button>
     </div>
 
-    <script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
-   
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+</div>
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1> </h1>
+            <h6><strong>AUDIO PLAYER <i class="fas fa-headphones"></i></strong></h6>
+            <h1> </h1>
+            <audio controls>
+                <source src="{{url_for('static', filename='audio/'+obj.audioFile)}}" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+    </div>
+</div>
+
+<!--DROPDOWN-->
+<div class="container">
+    <select id="languages" class="d-inline p-2 mb-2 bg-dark text-white">
+    </select>
+    <button class="d-inline btn btn-primary" onclick="translateNow()">Translate</button>
+</div>
+
+<div class="container" id="tranContainer">
+    <div class="card">
+        <div class="card-body">
+            <h6><strong>TRANSLATED TEXT<i class="fas fa-book-reader"></i></strong></h6>
+            <p class="lead" id="transText"></p>
+        </div>
+    </div>
+    <div class="card-action">
+        <button class="btn btn-success" onclick="copytranslate()"><i class="fas fa-copy mr-1"> Copy Text</i></button>
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+    <h1> </h1>
+</div>
+<div class="container" style="margin-top: 40px;">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h1> </h1>
+                    <h4><strong>Upload An Image</strong></h4>
+                    <hr>
+
+                    <form action="/" method="POST" enctype="multipart/form-data" id="img-form">
+
+                        <div class="form-group">
+                            <h6 for="exampleFormControlSelect1"><strong>Select The Language</strong></h6>
+                            <select class="form-control" id="exampleFormControlSelect1" name="select" required>
+                                <option value="">--Select--</option>
+                                {% for lang in langs%}
+                                {<option value={{lang}}>{{lang}}</option>}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <h6><strong>Drop a file below</strong></h6>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image" id="image"
+                                    accept="image/x-png,image/gif,image/jpeg" onchange="showPreviewOne(event);"
+                                    required>
+                                <label class="custom-file-label" for="image">Select image...</label>
+                            </div>
+                        </div>
+                        <div class="croper">
+                            <img id="file-ip-1-preview" src=""
+                                style="position: relative; left:50%; transform: translateX(-50%);max-width: 500px;max-height:300px;">
+                        </div>
+                        <button type="submit" id="give" class="btn waves-effect" onclick="loadingDisplay()"
+                            style="background: #1f2833; color: #ddd; border-radius:5px; font-weight: 400; letter-spacing:1px;">UPLOAD
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--loading symbol-->
+<link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<div id="loader">
+</div>
+{% endif %}
+<div class="container">
+    <h1> </h1>
+</div>
+
+<script src="{{url_for('static', filename='js/upload_image.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/upload_image.css')}}">
+
+
 {% endblock %}

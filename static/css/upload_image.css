@@ -170,9 +170,9 @@ body {
 footer {
     margin-top: 3rem;
     width: 100%;
-    min-height: 300px;
-    color: #66fcf1;
-    padding: 2rem;
+    min-height: 300px; 
+    color: #5a585c;
+    padding: 0px;
     box-sizing: border-box;
     background: #0B0c10;
     /* fallback for old browsers */
@@ -222,7 +222,7 @@ footer .social h3 {
 
 footer .social p {
     max-width: 350px;
-    text-align: left;
+    text-align: center;
 }
 
 footer .social .link {
@@ -231,14 +231,14 @@ footer .social .link {
 
 footer .social .link a {
     margin-right: 1rem;
-    background-color: #ffff;
-    padding: 0.75rem;
-    color: #2c2626;
-    border-radius: 5px;
+    background-color: rgb(94, 84, 84);
+    padding: 10px;
+    color: #000000;
+    border-radius: 10px;
 }
 
 footer .social .link a:hover {
-    color: #FF0161;
+    color: #ffe600;
 }
 
 @media screen and (max-width: 1000px) {

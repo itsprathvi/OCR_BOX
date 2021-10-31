@@ -16,7 +16,7 @@
 
 .card-intro .card-body {
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2.5rem;
     border-radius: 0 !important;
 }
 
@@ -55,7 +55,7 @@ body {
 .taste {
     background-color: #e0e0e0;
     color: #1d1d1c;
-    padding: 1rem;
+    padding: 3rem;
     border-radius: 5px;
     margin: 1rem;
     box-shadow: 2px 2px 10px rgb(41, 39, 39);

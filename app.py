@@ -78,7 +78,7 @@ def upload_image():
         return render_template("upload_image.html", langs=constant.LANGUAGES.values())
 
 
-@app.route("/langTranslator", methods=["GET", "POST"])  # GET never used
+@app.route("/langTranslator", methods=["GET", "POST"])
 def langTranslator():
     translator = google_translator()
     if request.method == "POST":

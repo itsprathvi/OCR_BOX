@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 <!-- Navigation -->
 
@@ -34,11 +34,14 @@
             <div class="container">
 
                 <!-- Brand -->
-                <a class="navbar-brand waves-effect" href="#" style="font-size:30px;font-family: 'Carter One', cursive;">Sushiksha</a>
+                <a class="navbar-brand waves-effect" href="#"
+                    style="font-size:30px;font-family: 'Carter One', cursive;">Sushiksha</a>
                 <!-- Collapse -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -75,7 +78,8 @@
                             OCR BOX
                         </p>
 
-                        <p class="mb-0" style="font-size:20px; font-family: 'Cinzel', serif;  color: #c5c6c7; ">Optical Character Recognition Website</p>
+                        <p class="mb-0" style="font-size:20px; font-family: 'Cinzel', serif;  color: #c5c6c7; ">Optical
+                            Character Recognition Website</p>
 
                     </div>
                     <!--Grid column-->
@@ -93,52 +97,35 @@
     {% block content %} {% endblock %}
 
     <!--Footer-->
-         <footer>
-                <div class="total-div ">
-            <div class="copyright">
-                <div class="loc">
-                    <div>
-                    <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <p>Lobo Prabhu Nagar Konkani Gaon
-                        Mangalore, Karnataka
-                        PIN - 575016
-                        India</p>
-                </div>
-                <div class="phn">
-                    <div>
-                    <i class="fas fa-phone"></i>
-                    </div>
-                    <p>+91 9591391294</p>
-                </div>
-                <div class="mail">
-                    <div>
-                    <i class="fas fa-envelope"></i>
-                    </div>
-                    <a href="mailto:sushikshawkc@gmail.com">sushikshawkc@gmail.com</a>
-                </div>
+    <footer>
+        <div class="social" style="margin-bottom: 0%;">
+            <h4><strong>An Initiative By </strong></h4>
+            <a href="https://vishwakonkani.org/"><img src="{{url_for('static', filename='img/wkc.png')}}"></a>
+            <div class="link">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="social">
-                <h4><strong>An Initiative By </strong></h4>
-                <a href="https://vishwakonkani.org/" ><img style = "width: 300px;background: #ddd;" src="{{url_for('static', filename='img/wkcc.png')}}"></a>
-                <div class="link">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div
+                style="text-align: center; margin-top: 30px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                <h6>CopyRight OCR-BOX All Rights Reserved</h6>
             </div>
-            </footer>
+    </footer>
 
-            <div id="notification-container"></div>
+    <div id="notification-container"></div>
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </body>
+
 </html>
