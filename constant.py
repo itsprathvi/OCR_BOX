@@ -1,6 +1,5 @@
 LANGUAGES = {
-    'sle': 'Select the Language',
-    'afr': 'Afrikaans',
+    'afr': 'African',
     'amh': 'Amharic',
     'ara': 'Arabic',
     'asm': 'Assamese',
